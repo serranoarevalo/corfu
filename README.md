@@ -1,32 +1,40 @@
+# Corfu
 
-# Storybook TypeScript React Component Library
+Corfu is a beautiful modern React UI Kit.
 
-Simple to use TypeScript React Component Library with Storybook 4.1 and test running with Jest.
+Check out the demo [here](https://serranoarevalo.github.io/corfu-demo)
 
-Compiles all code to a build folder for exporting. Creates a static version of Storybook site for hosting. Makes assumptions on TypeScript, TSLint, Webpack, and storybook Addon configurations.
+## Install
 
+`npm i --save corfu`
 
-## Available Scripts
+or
+
+`yarn add corfu`
+
+## Development
+
+#### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+##### `npm start`
 
 Starts the storybook site at http://localhost:53217/
 
-### `npm test`
+##### `npm test`
 
 Runs all tests with Jest and React-Test-Renderer
 
-### `npm test:update`
+##### `npm test:update`
 
 Runs all tests and updates snapshots for jest and create a coverage report
 
-### `npm test:coverage`
+##### `npm test:coverage`
 
 Runs tests and creates a coverage report
 
-### `npm run build`
+##### `npm run build`
 
 Compiles source files into build directory with type annotations upon succesful lint and typescript rules passing.
 

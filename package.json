@@ -1,5 +1,5 @@
 {
-  "name": "storybook-typescript-react-library",
+  "name": "corfu",
   "version": "0.2.1",
   "main": "build/lib/index.js",
   "types": "build/lib/index.d.ts",
@@ -46,6 +46,7 @@
     "react-docgen-typescript-loader": "^3.0.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.6.3",
+    "styled-components": "^4.1.2",
     "typescript": "^3.2.1"
   },
   "browserslist": [
@@ -57,9 +58,11 @@
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "@types/react-test-renderer": "^16.0.3",
+    "@types/styled-components": "^4.1.4",
     "jest": "^23.6.0",
     "react-test-renderer": "^16.6.3",
     "ts-jest": "^23.10.5",
-    "tslint": "^5.11.0"
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0"
   }
 }

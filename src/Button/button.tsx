@@ -32,6 +32,12 @@ interface IProps {
    *
    **/
   inverted?: boolean;
+  /**
+   * href attribute for the button link
+   *
+   *
+   **/
+  href?: string;
 }
 
 export const Button = ({
@@ -39,10 +45,17 @@ export const Button = ({
   element = "button",
   edges = "sharp",
   bgColor = "primary",
-  inverted = false
+  inverted = false,
+  href
 }: IProps) => {
   return (
-    <Container as={element} edges={edges} bgColor={bgColor} inverted={inverted}>
+    <Container
+      as={element}
+      edges={edges}
+      bgColor={bgColor}
+      inverted={inverted}
+      href={href}
+    >
       {content}
     </Container>
   );

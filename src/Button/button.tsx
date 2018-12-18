@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { ButtonProps } from "../types";
 
 const Container = styled<any>("div")`
   padding: 15px 25px;
@@ -23,7 +25,7 @@ const Container = styled<any>("div")`
       return "white";
     }
   }};
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Nunito Sans", sans-serif;
   &:active,
   &:focus {
@@ -101,51 +103,15 @@ const Container = styled<any>("div")`
     }};
 `;
 
-interface IProps {
-  /**
-   * Text of the button.
-   **/
-  content: string;
-  /**
-   * Preferred HTML Element to render the button
-   * @default button
-   *
-   **/
-  element?: "a" | "div" | "button";
-  /**
-   * Edge Style of the button
-   * @default sharp
-   *
-   **/
-  edges?: "sharp" | "rounded" | "round-sharp";
-  /**
-   * Background Color
-   * @default primary
-   *
-   **/
-  primaryColor?: "primary" | "success" | "error" | "alert" | "dark";
-  /**
-   * Transparent Background and colored border and content
-   * @default false
-   *
-   **/
-  inverted?: boolean;
-  /**
-   * href attribute for the button link
-   *
-   *
-   **/
-  href?: string;
-}
-
 export const Button = ({
   content,
   element = "button",
   edges = "sharp",
   primaryColor = "primary",
   inverted = false,
-  href
-}: IProps) => {
+  href,
+  className
+}: ButtonProps) => {
   return (
     <Container
       as={element}
@@ -153,8 +119,24 @@ export const Button = ({
       primaryColor={primaryColor}
       inverted={inverted}
       href={href}
+      className={className}
     >
       {content}
     </Container>
   );
+};
+
+Button.propTypes = {
+  content: PropTypes.string.isRequired,
+  element: PropTypes.oneOf(["a", "div", "button"]),
+  edges: PropTypes.oneOf(["sharp", "rounded", "round-sharp"]),
+  primaryColor: PropTypes.oneOf([
+    "primary",
+    "success",
+    "error",
+    "alert",
+    "dark"
+  ]),
+  inverted: PropTypes.bool,
+  href: PropTypes.string
 };

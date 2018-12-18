@@ -10,9 +10,9 @@ const stories = storiesOf("Button", module).addDecorator(
 
 stories.add("with text", () => (
   <Button
-    content={text("Content", "hey!")}
+    content={text("Content", "Button Text!")}
     edges={select("Edge Style", ["sharp", "rounded", "round-sharp"], "sharp")}
-    bgColor={select(
+    primaryColor={select(
       "Background Color",
       ["primary", "success", "error", "alert", "dark"],
       "primary"

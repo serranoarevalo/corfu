@@ -81,6 +81,38 @@ export interface InputProps {
    * Class Name for Styled Components
    */
   className?: string;
+  /**
+   * Does the form has an error
+   * @default false
+   */
+  hasError?: boolean;
+  /**
+   * If it has error, what  message should be shown
+   */
+  errorMsg?: string;
+  /**
+   * Does the form has a warning
+   * @default false
+   */
+  hasWarning?: boolean;
+  /**
+   * If it has warning, what message should be shown
+   */
+  warningMsg?: string;
+  /**
+   * Does the form has a sucessfull state
+   * @default false
+   */
+  hasSuccess?: boolean;
+  /**
+   * If it has success, what message should be shown
+   */
+  successMsg?: string;
+  /**
+   * Is the input disabled
+   * @default false
+   */
+  disabled?: boolean;
 }
 
 export class Button extends React.Component<ButtonProps> {}

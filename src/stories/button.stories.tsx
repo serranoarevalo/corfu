@@ -4,7 +4,7 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 import { Button } from "../Button/button";
 
-const stories = storiesOf("Button", module).addDecorator(withInfo());
+const stories = storiesOf("Buttons", module).addDecorator(withInfo());
 
 stories.add("default", () => (
   <Button

@@ -10,11 +10,26 @@ const Container = styled<any>("div")`
   font-family: "Nunito Sans", sans-serif;
 `;
 
-const Label = styled.label`
+const Label = styled<any>("label")`
   font-weight: 700;
   font-size: 14px;
   margin-left: 12px;
   margin-bottom: 11px;
+  color: ${props => {
+    if (props.isMaterial) {
+      if (props.hasError) {
+        return `#E24C4C`;
+      } else if (props.hasWarning) {
+        return `#F1A153`;
+      } else if (props.hasSuccess) {
+        return `#4CE2A7`;
+      } else if (props.disabled) {
+        return "#CCCCCC";
+      }
+    } else {
+      return "#333333";
+    }
+  }};
 `;
 
 const SInput = styled<any>("input")`
@@ -22,12 +37,28 @@ const SInput = styled<any>("input")`
   background-color: ${props => (props.isMaterial ? "transparent" : "white")};
   box-shadow: ${props =>
     props.isMaterial ? "none" : "0px 2px 4px 0px rgba(0, 0, 0, 0.1)"};
-  border-radius: 3px;
-  padding: 15px 12px;
+  border-radius: ${props =>
+    props.isMaterial || props.leftParam ? "0px" : "3px"};
+  padding: 12px;
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   color: #333333;
   transition: all 0.2s ease-in-out;
+  border-bottom: ${props => {
+    if (props.hasError || props.hasWarning || props.hasSuccess) {
+      if (props.hasError) {
+        return `2px solid #E24C4C`;
+      } else if (props.hasWarning) {
+        return `2px solid #F1A153`;
+      } else if (props.hasSuccess) {
+        return `2px solid #4CE2A7`;
+      }
+    } else {
+      if (props.isMaterial) {
+        return `2px solid #666666`;
+      }
+    }
+  }};
   &::placeholder {
     color: #999999;
   }
@@ -38,7 +69,37 @@ const SInput = styled<any>("input")`
   &:focus {
     box-shadow: ${props =>
       props.isMaterial ? "none" : "0px 5px 8px 0px rgba(0, 0, 0, 0.1)"};
+    ${props => {
+      if (props.isMaterial) {
+        return `border-bottom: 2px solid #2D4EF5`;
+      }
+    }}
   }
+  &:disabled {
+    box-shadow: none;
+    background-color: ${props => {
+      if (!props.isMaterial) {
+        return `#ebebeb`;
+      }
+    }};
+    border-bottom: ${props =>
+      props.isMaterial ? "2px solid #EBEBEB" : "none"};
+  }
+`;
+
+const Message = styled<any>("span")`
+  margin-top: 10px;
+  font-size: 14px;
+  margin-left: ${props => (props.isMaterial ? "12px" : "0px")};
+  color: ${props => {
+    if (props.hasError) {
+      return "#E24C4C";
+    } else if (props.hasSuccess) {
+      return "#4CE2A7";
+    } else if (props.hasWarning) {
+      return "#F1A153";
+    }
+  }};
 `;
 
 export const Input = ({
@@ -49,10 +110,28 @@ export const Input = ({
   isMaterial = false,
   name,
   id,
-  width = "500px"
+  width = "500px",
+  hasError = false,
+  hasWarning = false,
+  hasSuccess = false,
+  errorMsg,
+  warningMsg,
+  successMsg,
+  disabled = false
 }: InputProps) => (
   <Container width={width}>
-    {label ? <Label htmlFor={id}>{label}</Label> : null}
+    {label ? (
+      <Label
+        htmlFor={id}
+        isMaterial={isMaterial}
+        hasError={hasError}
+        hasWarning={hasWarning}
+        hasSuccess={hasSuccess}
+        disabled={disabled}
+      >
+        {label}
+      </Label>
+    ) : null}
     <SInput
       id={id}
       name={name}
@@ -60,7 +139,26 @@ export const Input = ({
       placeholder={placeholder}
       as={multiline ? "textarea" : "input"}
       isMaterial={isMaterial}
+      hasError={hasError}
+      hasWarning={hasWarning}
+      hasSuccess={hasSuccess}
+      disabled={disabled}
     />
+    {hasError && (
+      <Message hasError isMaterial={isMaterial}>
+        {errorMsg}
+      </Message>
+    )}
+    {hasWarning && (
+      <Message hasWarning isMaterial={isMaterial}>
+        {warningMsg}
+      </Message>
+    )}
+    {hasSuccess && (
+      <Message hasSuccess isMaterial={isMaterial}>
+        {successMsg}
+      </Message>
+    )}
   </Container>
 );
 

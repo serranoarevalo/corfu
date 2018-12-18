@@ -166,5 +166,16 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  multiline: PropTypes.bool
+  multiline: PropTypes.bool,
+  isMaterial: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  width: PropTypes.string,
+  hasError: PropTypes.bool,
+  hasWarning: PropTypes.bool,
+  hasSuccess: PropTypes.bool,
+  errorMsg: PropTypes.string,
+  warningMsg: PropTypes.string,
+  successMsg: PropTypes.string,
+  disabled: PropTypes.bool
 };

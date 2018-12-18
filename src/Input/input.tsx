@@ -177,5 +177,6 @@ Input.propTypes = {
   errorMsg: PropTypes.string,
   warningMsg: PropTypes.string,
   successMsg: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  className: PropTypes.string
 };

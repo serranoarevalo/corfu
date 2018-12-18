@@ -138,5 +138,6 @@ Button.propTypes = {
     "dark"
   ]),
   inverted: PropTypes.bool,
-  href: PropTypes.string
+  href: PropTypes.string,
+  className: PropTypes.string
 };

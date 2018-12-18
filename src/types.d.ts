@@ -115,5 +115,49 @@ export interface InputProps {
   disabled?: boolean;
 }
 
+export interface IconButtonProps {
+  /**
+   * HTML Element
+   **/
+  icon: any;
+  /**
+   * Preferred HTML Element to render the button
+   * @default button
+   *
+   **/
+  element?: "a" | "div" | "button";
+  /**
+   * Edge Style of the button
+   * @default sharp
+   *
+   **/
+  edges?: "sharp" | "rounded" | "round-sharp";
+  /**
+   * Background Color
+   * @default primary
+   *
+   **/
+  primaryColor?: "primary" | "success" | "error" | "alert" | "dark";
+  /**
+   * href attribute for the button link
+   **/
+  href?: string;
+  /**
+   * Class Name for Styled Components
+   */
+  className?: string;
+  /**
+   * Button width
+   * @default 25px
+   */
+  width?: string;
+  /**
+   * Button height
+   * @default 25px
+   */
+  height?: string;
+}
+
 export class Button extends React.Component<ButtonProps> {}
 export class Input extends React.Component<InputProps> {}
+export class IconButton extends React.Component<IconButtonProps> {}

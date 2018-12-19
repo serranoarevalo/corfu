@@ -4,6 +4,7 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 import { Input } from "../Input/input";
 import { Checkbox } from "../Checkbox/checkbox";
+import { Radio } from "../Radio/radio";
 
 const stories = storiesOf("Form Fields", module).addDecorator(withInfo());
 
@@ -30,6 +31,16 @@ stories.add("checkbox", () => (
     id="check"
     label={text("Label", "Checkbox label")}
     name="check"
+    checked={boolean("Checked", false)}
+    disabled={boolean("Disabled", false)}
+  />
+));
+
+stories.add("radio", () => (
+  <Radio
+    id="radio"
+    label={text("Label", "Radio label")}
+    name="radio"
     checked={boolean("Checked", false)}
     disabled={boolean("Disabled", false)}
   />

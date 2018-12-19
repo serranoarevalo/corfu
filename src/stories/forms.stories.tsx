@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 import { Input } from "../Input/input";
+import { Checkbox } from "../Checkbox/checkbox";
 
 const stories = storiesOf("Form Fields", module).addDecorator(withInfo());
 
@@ -21,5 +22,15 @@ stories.add("input", () => (
     disabled={boolean("Disabled", false)}
     isMaterial={boolean("Material Design", false)}
     id="something"
+  />
+));
+
+stories.add("checkbox", () => (
+  <Checkbox
+    id="check"
+    label={text("Label", "Checkbox label")}
+    name="check"
+    checked={boolean("Checked", false)}
+    disabled={boolean("Disabled", false)}
   />
 ));

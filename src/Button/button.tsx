@@ -1,7 +1,47 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { ButtonProps } from "../types";
+
+interface IProps {
+  /**
+   * Text of the button.
+   **/
+  content: string;
+  /**
+   * Preferred HTML Element to render the button
+   * @default button
+   *
+   **/
+  element?: "a" | "div" | "button";
+  /**
+   * Edge Style of the button
+   * @default sharp
+   *
+   **/
+  edges?: "sharp" | "rounded" | "round-sharp";
+  /**
+   * Background Color
+   * @default primary
+   *
+   **/
+  primaryColor?: "primary" | "success" | "error" | "alert" | "dark";
+  /**
+   * Transparent Background and colored border and content
+   * @default false
+   *
+   **/
+  inverted?: boolean;
+  /**
+   * href attribute for the button link
+   *
+   *
+   **/
+  href?: string;
+  /**
+   * Class Name for Styled Components
+   */
+  className?: string;
+}
 
 const Container = styled<any>("div")`
   padding: 15px 25px;
@@ -111,7 +151,7 @@ export const Button = ({
   inverted = false,
   href,
   className
-}: ButtonProps) => {
+}: IProps) => {
   return (
     <Container
       as={element}

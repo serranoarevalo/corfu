@@ -1,8 +1,49 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconButtonProps } from "../types";
+
+interface IProps {
+  /**
+   * HTML Element
+   **/
+  icon: any;
+  /**
+   * Preferred HTML Element to render the button
+   * @default button
+   *
+   **/
+  element?: "a" | "div" | "button";
+  /**
+   * Edge Style of the button
+   * @default sharp
+   *
+   **/
+  edges?: "sharp" | "rounded" | "round-sharp";
+  /**
+   * Background Color
+   * @default primary
+   *
+   **/
+  primaryColor?: "primary" | "success" | "error" | "alert" | "dark";
+  /**
+   * href attribute for the button link
+   **/
+  href?: string;
+  /**
+   * Class Name for Styled Components
+   */
+  className?: string;
+  /**
+   * Button width
+   * @default 25px
+   */
+  width?: string;
+  /**
+   * Button height
+   * @default 25px
+   */
+  height?: string;
+}
 
 const Container = styled<any>("button")`
   background: none;
@@ -71,7 +112,7 @@ export const IconButton = ({
   className,
   width = "50px",
   height = "50px"
-}: IconButtonProps) => (
+}: IProps) => (
   <Container
     className={className}
     edges={edges}

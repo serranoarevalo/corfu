@@ -1,7 +1,80 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { InputProps } from "../types";
+
+interface IProps {
+  /**
+   * Value of the input
+   */
+  value: string;
+  /**
+   * Label that's displayed on top of the input
+   */
+  label?: string;
+  /**
+   * Placeholder of the input
+   */
+  placeholder?: string;
+  /**
+   * Renders a text area rather than an input
+   * @default false
+   */
+  multiline?: boolean;
+  /**
+   * Name of the input
+   */
+  name?: string;
+  /**
+   * ID of the input (required for the label to work)
+   */
+  id?: string;
+  /**
+   * Width of the input
+   * @default 500px
+   */
+  width?: string;
+  /**
+   * Removes the background and shadow of the input. Makes it look like a material design input.
+   * @default false
+   */
+  isMaterial?: boolean;
+  /**
+   * Class Name for Styled Components
+   */
+  className?: string;
+  /**
+   * Does the form has an error
+   * @default false
+   */
+  hasError?: boolean;
+  /**
+   * If it has error, what  message should be shown
+   */
+  errorMsg?: string;
+  /**
+   * Does the form has a warning
+   * @default false
+   */
+  hasWarning?: boolean;
+  /**
+   * If it has warning, what message should be shown
+   */
+  warningMsg?: string;
+  /**
+   * Does the form has a sucessfull state
+   * @default false
+   */
+  hasSuccess?: boolean;
+  /**
+   * If it has success, what message should be shown
+   */
+  successMsg?: string;
+  /**
+   * Is the input disabled
+   * @default false
+   */
+  disabled?: boolean;
+}
 
 const Container = styled<any>("div")`
   display: flex;
@@ -118,7 +191,7 @@ export const Input = ({
   warningMsg,
   successMsg,
   disabled = false
-}: InputProps) => (
+}: IProps) => (
   <Container width={width}>
     {label ? (
       <Label

@@ -5,6 +5,7 @@ import { withInfo } from "@storybook/addon-info";
 import { Input } from "../Input/input";
 import { Checkbox } from "../Checkbox/checkbox";
 import { Radio } from "../Radio/radio";
+import { Switch } from "../Switch/switch";
 
 const stories = storiesOf("Form Fields", module).addDecorator(withInfo());
 
@@ -45,3 +46,5 @@ stories.add("radio", () => (
     disabled={boolean("Disabled", false)}
   />
 ));
+
+stories.add("switch", () => <Switch on={boolean("On", true)} />);

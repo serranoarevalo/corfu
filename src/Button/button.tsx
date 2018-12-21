@@ -41,6 +41,16 @@ interface IProps {
    * Class Name for Styled Components
    */
   className?: string;
+  /**
+   * Width
+   * @default 180px
+   */
+  width?: string;
+  /**
+   * Function that will be called when the X button is clicked
+   * @default null
+   */
+  onClick?: (...args: any[]) => any;
 }
 
 const Container = styled<any>("div")`
@@ -48,6 +58,8 @@ const Container = styled<any>("div")`
   font-size: 14px;
   background: none;
   border: none;
+  font-family: "Nunito Sans", sans-serif;
+  width: ${props => props.width};
   color: ${props => {
     if (props.inverted) {
       if (props.primaryColor === "primary") {
@@ -73,20 +85,16 @@ const Container = styled<any>("div")`
   }
   box-sizing: border-box;
   border: ${props => {
-    if (props.inverted) {
-      if (props.primaryColor === "primary") {
-        return "2px solid #2D4EF5";
-      } else if (props.primaryColor === "success") {
-        return "2px solid #4CE2A7";
-      } else if (props.primaryColor === "error") {
-        return "2px solid #E24C4C";
-      } else if (props.primaryColor === "alert") {
-        return "2px solid #F1A153";
-      } else if (props.primaryColor === "dark") {
-        return "2px solid #022047";
-      }
-    } else {
-      return "none";
+    if (props.primaryColor === "primary") {
+      return "2px solid #2D4EF5";
+    } else if (props.primaryColor === "success") {
+      return "2px solid #4CE2A7";
+    } else if (props.primaryColor === "error") {
+      return "2px solid #E24C4C";
+    } else if (props.primaryColor === "alert") {
+      return "2px solid #F1A153";
+    } else if (props.primaryColor === "dark") {
+      return "2px solid #022047";
     }
   }};
   background-color: ${props => {
@@ -150,7 +158,9 @@ export const Button = ({
   primaryColor = "primary",
   inverted = false,
   href,
-  className
+  className,
+  width = "180px",
+  onClick
 }: IProps) => {
   return (
     <Container
@@ -160,6 +170,8 @@ export const Button = ({
       inverted={inverted}
       href={href}
       className={className}
+      width={width}
+      onClick={onClick}
     >
       {content}
     </Container>
@@ -179,5 +191,7 @@ Button.propTypes = {
   ]),
   inverted: PropTypes.bool,
   href: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  width: PropTypes.string,
+  onClick: PropTypes.func
 };

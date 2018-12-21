@@ -23,6 +23,7 @@ const Container = styled.div`
   padding: 4px;
   align-items: center;
   cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
 `;
 
 const Circle = styled<any>("div")`

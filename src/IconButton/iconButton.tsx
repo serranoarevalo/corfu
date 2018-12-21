@@ -47,6 +47,7 @@ interface IProps {
 
 const Container = styled<any>("button")`
   background: none;
+  font-family: "Nunito Sans", sans-serif;
   border: none;
   width: ${props => props.width};
   height: ${props => props.height};

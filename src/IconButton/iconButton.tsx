@@ -30,7 +30,7 @@ interface IProps {
    **/
   href?: string;
   /**
-   * Class Name for Styled Components
+   * Custom Class Name
    */
   className?: string;
   /**

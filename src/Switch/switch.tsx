@@ -8,6 +8,10 @@ interface IProps {
    * @default true
    */
   on?: boolean;
+  /**
+   * Custom Class Name
+   */
+  className?: string;
 }
 
 const Container = styled.div`
@@ -31,8 +35,8 @@ const Circle = styled<any>("div")`
   }
 `;
 
-export const Switch = ({ on = true }: IProps) => (
-  <Container>
+export const Switch = ({ on = true, className }: IProps) => (
+  <Container className={className}>
     <Circle on={on}>
       <svg
         xmlns="http://www.w3.org/2000/svg"

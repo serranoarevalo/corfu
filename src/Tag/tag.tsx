@@ -17,6 +17,10 @@ interface IProps {
    * @default primary
    */
   bgColor?: "primary" | "success" | "error" | "alert" | "dark";
+  /**
+   * Custom Class Name
+   */
+  className?: string;
 }
 
 const Container = styled<any>("span")`
@@ -52,8 +56,13 @@ const Container = styled<any>("span")`
   line-height: 1;
 `;
 
-export const Tag = ({ text, edges = "sharp", bgColor = "primary" }: IProps) => (
-  <Container bgColor={bgColor} edges={edges}>
+export const Tag = ({
+  text,
+  edges = "sharp",
+  bgColor = "primary",
+  className
+}: IProps) => (
+  <Container bgColor={bgColor} edges={edges} className={className}>
     {text}
   </Container>
 );

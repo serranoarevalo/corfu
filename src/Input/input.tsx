@@ -39,10 +39,6 @@ interface IProps {
    */
   isMaterial?: boolean;
   /**
-   * Class Name for Styled Components
-   */
-  className?: string;
-  /**
    * Does the form has an error
    * @default false
    */
@@ -74,6 +70,10 @@ interface IProps {
    * @default false
    */
   disabled?: boolean;
+  /**
+   * Custom Class Name
+   */
+  className?: string;
 }
 
 const Container = styled<any>("div")`
@@ -190,9 +190,10 @@ export const Input = ({
   errorMsg,
   warningMsg,
   successMsg,
-  disabled = false
+  disabled = false,
+  className
 }: IProps) => (
-  <Container width={width}>
+  <Container className={className} width={width}>
     {label ? (
       <Label
         htmlFor={id}

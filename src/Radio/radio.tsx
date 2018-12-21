@@ -24,6 +24,10 @@ interface IProps {
    * @default false
    */
   disabled?: boolean;
+  /**
+   * Class Name
+   */
+  className?: string;
 }
 
 const Container = styled.div`
@@ -78,9 +82,10 @@ export const Radio = ({
   id,
   name,
   checked,
-  disabled = false
+  disabled = false,
+  className
 }: IProps) => (
-  <Container>
+  <Container className={className}>
     <Input
       type="checkbox"
       id={id}
@@ -109,5 +114,6 @@ Radio.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   checked: PropTypes.bool.isRequired,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  className: PropTypes.string
 };

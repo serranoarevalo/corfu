@@ -20,7 +20,8 @@
     "copy-woff2-to-lib": "cpx \"./src/**/*.woff2\" ./build/lib",
     "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
     "copy-png-to-lib": "cpx \"./src/**/*.png\" ./build/lib",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "deploy": "gh-pages -d storybook-static"
   },
   "dependencies": {
     "prop-types": "^15.6.2",
@@ -56,6 +57,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.4",
     "cpx": "^1.5.0",
+    "gh-pages": "^2.0.1",
     "jest": "^23.6.0",
     "npm": "^6.4.1",
     "prop-types": "^15.6.2",

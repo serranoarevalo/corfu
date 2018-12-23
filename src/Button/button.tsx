@@ -161,22 +161,20 @@ export const Button = ({
   className,
   width = "180px",
   onClick
-}: IProps) => {
-  return (
-    <Container
-      as={element}
-      edges={edges}
-      primaryColor={primaryColor}
-      inverted={inverted}
-      href={href}
-      className={className}
-      width={width}
-      onClick={onClick}
-    >
-      {content}
-    </Container>
-  );
-};
+}: IProps) => (
+  <Container
+    as={element}
+    edges={edges}
+    primaryColor={primaryColor}
+    inverted={inverted}
+    href={href}
+    className={className}
+    width={width}
+    onClick={onClick}
+  >
+    {content}
+  </Container>
+);
 
 Button.propTypes = {
   content: PropTypes.string.isRequired,

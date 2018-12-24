@@ -35,7 +35,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  position: relative;
 `;
 
 const Label = styled.label`
@@ -47,7 +46,7 @@ const Label = styled.label`
 const Svg = styled<any>("div")`
   position: absolute;
   display: block;
-  top: 4px;
+  top: 15%;
   left: 6px;
   color: white;
   .check {
@@ -61,6 +60,7 @@ const Svg = styled<any>("div")`
 const Input = styled.input`
   all: unset;
   border: none;
+  position: relative;
   background: none;
   width: 20px;
   height: 20px;

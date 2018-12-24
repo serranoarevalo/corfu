@@ -1,6 +1,6 @@
 {
   "name": "corfu",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
@@ -22,7 +22,6 @@
     "copy-png-to-lib": "cpx \"./src/**/*.png\" ./build/lib",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "deploy": "gh-pages -d storybook-static",
-    "publish": "npm run publish",
     "predeploy": "yarn run build"
   },
   "dependencies": {

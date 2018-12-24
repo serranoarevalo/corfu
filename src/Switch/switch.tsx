@@ -29,7 +29,7 @@ const Container = styled.div`
 const Circle = styled<any>("div")`
   height: 20px;
   transition: all 0.2s ease-in-out;
-  transform: ${props => (props.on ? "translatex(30px)" : "none")};
+  transform: ${props => (props.on ? "translatex(22px)" : "none")};
   svg {
     transition: all 0.2s ease-in-out;
     fill: ${props => (props.on ? "#2D4EF5" : "#E5E5E5")};

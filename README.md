@@ -4,6 +4,8 @@ Corfu is a beautiful modern React UI Kit.
 
 Storybook Playground [here](https://serranoarevalo.github.io/corfu/)
 
+Demo [here](https://serranoarevalo.github.io/corfu-demo)
+
 ## Install
 
 `npm i --save corfu`

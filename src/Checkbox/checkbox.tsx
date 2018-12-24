@@ -34,7 +34,9 @@ const Container = styled.div`
   font-family: "Nunito Sans", sans-serif;
   display: flex;
   align-items: center;
+  position: relative;
   cursor: pointer;
+  height: 20px;
 `;
 
 const Label = styled.label`
@@ -46,7 +48,7 @@ const Label = styled.label`
 const Svg = styled<any>("div")`
   position: absolute;
   display: block;
-  top: 15%;
+  top: 5%;
   left: 6px;
   color: white;
   .check {
@@ -60,7 +62,6 @@ const Svg = styled<any>("div")`
 const Input = styled.input`
   all: unset;
   border: none;
-  position: relative;
   background: none;
   width: 20px;
   height: 20px;

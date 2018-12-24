@@ -35,6 +35,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  height: 20px;
 `;
 
 const Label = styled.label`
@@ -46,7 +48,7 @@ const Label = styled.label`
 const Svg = styled<any>("div")`
   position: absolute;
   display: block;
-  top: 15%;
+  top: 5%;
   left: 6px;
   svg {
     fill: ${props => (props.checked ? "#2d4ef5" : "#CCCCCC")};
@@ -63,7 +65,6 @@ const Input = styled.input`
   border-radius: 50%;
   border: 3px solid #dfdfdf;
   transition: all 0.2s ease-in-out;
-  position: relative;
   &:checked {
     border: 3px solid #2d4ef5;
   }
